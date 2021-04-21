@@ -523,6 +523,7 @@ class Logger:
         elif isinstance(level, int):
             levelname = LOG_LEVELS_BY_NUM[level]
             level = getLevelNumByDescription(levelname)
+        print('level=%s, type(levle)=%s' % (level, type(level)))
         assert(isinstance(level, LevelsByName))
         self.level = level
 
