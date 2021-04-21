@@ -516,14 +516,16 @@ class LogRecord:
 
 class Logger:
     def __init__(self, level=None, handlers=None):
+        print('[BEFORE] level=%s, type(levle)=%s' % (level, type(level)))
         if level is None:
             level = LevelsByName.INFO
         elif isinstance(level, str):
             level = getLevelNumByDescription(level)
         elif isinstance(level, int):
             levelname = LOG_LEVELS_BY_NUM[level]
+            print('levelname=%s, type(levlename)=%s' % (levelname, type(levelname)))
             level = getLevelNumByDescription(levelname)
-        print('level=%s, type(levle)=%s' % (level, type(level)))
+        print('[AFTER] level=%s, type(levle)=%s' % (level, type(level)))
         assert(isinstance(level, LevelsByName))
         self.level = level
 
