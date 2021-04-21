@@ -521,12 +521,7 @@ class Logger:
             level = LevelsByName.INFO
         elif isinstance(level, str):
             level = getLevelNumByDescription(level)
-        elif isinstance(level, int):
-            levelname = LOG_LEVELS_BY_NUM[level]
-            print('levelname=%s, type(levlename)=%s' % (levelname, type(levelname)))
-            level = getLevelNumByDescription(levelname)
         print('[AFTER] level=%s, type(levle)=%s' % (level, type(level)))
-        assert(isinstance(level, LevelsByName))
         self.level = level
 
         if handlers is None:
